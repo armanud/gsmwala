@@ -1,0 +1,2 @@
+[dotenv@17.2.2] injecting env (6) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Server running on http://localhost:3000

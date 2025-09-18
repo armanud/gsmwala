@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uploaded - Filewale Clone</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial; line-height: 1.5; margin: 0; background: #0f172a; color: #e2e8f0; }
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px; }
+    .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 24px; }
+    .row { margin: 12px 0; }
+    input.readonly { width: 100%; padding: 10px; background: #0b1220; color: #e2e8f0; border: 1px solid #334155; border-radius: 8px; }
+    button { background: #2563eb; color: white; border: 0; padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+  </style>
+  <script>
+    async function copyLink() {
+      const el = document.getElementById('link');
+      el.select();
+      try { await navigator.clipboard.writeText(el.value); alert('Link copied'); } catch(e) { alert('Copy failed'); }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h2>Upload successful</h2>
+      <div class="row">File: <strong><%= originalName %></strong></div>
+      <div class="row">Expires: <strong><%= new Date(expiresAt).toLocaleString() %></strong></div>
+      <div class="row">
+        <input id="link" class="readonly" type="text" readonly value="<%= link %>" />
+      </div>
+      <div class="row">
+        <a href="<%= link %>"><button>Open link</button></a>
+        <button onclick="copyLink()">Copy link</button>
+      </div>
+      <div class="row">
+        <a href="/">Upload another file</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

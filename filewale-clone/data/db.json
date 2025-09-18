@@ -1,0 +1,42 @@
+{
+  "zfqk20g1ie": {
+    "id": "zfqk20g1ie",
+    "originalName": "sample.txt",
+    "storedFilename": "zfqk20g1ie.txt",
+    "sizeBytes": 25,
+    "mimeType": "text/plain",
+    "uploadedAt": 1758205064284,
+    "expiresAt": 1758208664284,
+    "downloads": 0
+  },
+  "h5wxa79cka": {
+    "id": "h5wxa79cka",
+    "originalName": "tmp.LHV9d5n9eK",
+    "storedFilename": "h5wxa79cka.LHV9d5n9eK",
+    "sizeBytes": 26,
+    "mimeType": "application/octet-stream",
+    "uploadedAt": 1758205090579,
+    "expiresAt": 1758208690579,
+    "downloads": 0
+  },
+  "tu1mffxw0l": {
+    "id": "tu1mffxw0l",
+    "originalName": "tmp.XCgv57ugxo",
+    "storedFilename": "tu1mffxw0l.XCgv57ugxo",
+    "sizeBytes": 6,
+    "mimeType": "application/octet-stream",
+    "uploadedAt": 1758205131215,
+    "expiresAt": 1758208731215,
+    "downloads": 0
+  },
+  "5et7tfy9fi": {
+    "id": "5et7tfy9fi",
+    "originalName": "tmp.PY8vAeE7os",
+    "storedFilename": "5et7tfy9fi.PY8vAeE7os",
+    "sizeBytes": 6,
+    "mimeType": "application/octet-stream",
+    "uploadedAt": 1758205153856,
+    "expiresAt": 1758208753856,
+    "downloads": 0
+  }
+}
