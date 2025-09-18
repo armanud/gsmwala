@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filewale Clone - Upload</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 1.5; margin: 0; background: #0f172a; color: #e2e8f0; }
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px; }
+    .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 24px; }
+    h1 { margin-top: 0; font-size: 28px; }
+    label { display: block; margin: 12px 0 6px; }
+    input[type="file"], input[type="number"] { width: 100%; padding: 10px; background: #0b1220; color: #e2e8f0; border: 1px solid #334155; border-radius: 8px; }
+    .actions { margin-top: 16px; display: flex; gap: 12px; align-items: center; }
+    button { background: #2563eb; color: white; border: 0; padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+    .hint { color: #94a3b8; font-size: 14px; }
+  </style>
+  <script>
+    function validateForm() {
+      const fileInput = document.getElementById('file');
+      if (!fileInput.files || fileInput.files.length === 0) {
+        alert('Please choose a file to upload.');
+        return false;
+      }
+      return true;
+    }
+  </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Upload a file</h1>
+        <p class="hint">Max size: <strong><%= maxFileSizeMb %> MB</strong></p>
+        <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+          <label for="file">Choose file</label>
+          <input id="file" type="file" name="file" required />
+
+          <label for="expiry_hours">Expiry (hours)</label>
+          <input id="expiry_hours" type="number" name="expiry_hours" min="1" max="720" value="<%= defaultExpiryHours %>" />
+
+          <div class="actions">
+            <button type="submit">Upload</button>
+            <span class="hint">Link will be generated after upload.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  </html>
+
