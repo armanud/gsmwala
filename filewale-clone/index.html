@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilewAle - File Sharing & Downloads</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-file-alt"></i> FilewAle</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#upload" class="nav-link">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#files" class="nav-link">Files</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Share Files Seamlessly</h1>
+                <p>Upload, share, and download files quickly and securely. Your go-to platform for file management and sharing.</p>
+                <div class="hero-buttons">
+                    <a href="#upload" class="btn btn-primary">
+                        <i class="fas fa-upload"></i> Upload Files
+                    </a>
+                    <a href="#files" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Browse Files
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="file-icons">
+                    <i class="fas fa-file-pdf"></i>
+                    <i class="fas fa-file-image"></i>
+                    <i class="fas fa-file-video"></i>
+                    <i class="fas fa-file-archive"></i>
+                    <i class="fas fa-file-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Upload Your Files</h2>
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p>or click to browse files</p>
+                        <input type="file" id="fileInput" multiple hidden>
+                        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-folder-open"></i> Choose Files
+                        </button>
+                    </div>
+                </div>
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+                <div class="file-list" id="fileList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Files Section -->
+    <section id="files" class="files-section">
+        <div class="container">
+            <h2><i class="fas fa-folder-open"></i> Available Files</h2>
+            
+            <!-- Search and Filter -->
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search files...">
+                </div>
+                <div class="filter-options">
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="pdf">PDF</option>
+                        <option value="image">Images</option>
+                        <option value="video">Videos</option>
+                        <option value="archive">Archives</option>
+                        <option value="document">Documents</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="size">File Size</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Files Grid -->
+            <div class="files-grid" id="filesGrid">
+                <!-- Sample files - these would be dynamically loaded -->
+                <div class="file-card" data-type="pdf">
+                    <div class="file-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>Sample Document.pdf</h4>
+                        <p class="file-size">2.5 MB</p>
+                        <p class="file-date">2 hours ago</p>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn-action download-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-action share-btn">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-card" data-type="image">
+                    <div class="file-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>photo.jpg</h4>
+                        <p class="file-size">1.8 MB</p>
+                        <p class="file-date">5 hours ago</p>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn-action download-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-action share-btn">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-card" data-type="archive">
+                    <div class="file-icon">
+                        <i class="fas fa-file-archive"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>project.zip</h4>
+                        <p class="file-size">15.2 MB</p>
+                        <p class="file-date">1 day ago</p>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn-action download-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-action share-btn">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-card" data-type="video">
+                    <div class="file-icon">
+                        <i class="fas fa-file-video"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>tutorial.mp4</h4>
+                        <p class="file-size">45.6 MB</p>
+                        <p class="file-date">3 days ago</p>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn-action download-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-action share-btn">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About FilewAle</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>FilewAle is a modern file sharing platform that makes it easy to upload, share, and download files securely. Whether you're sharing documents, images, videos, or any other type of file, our platform provides a seamless experience.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure</h4>
+                            <p>Your files are protected with advanced security measures</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Fast</h4>
+                            <p>Lightning-fast uploads and downloads</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Friendly</h4>
+                            <p>Access your files from any device, anywhere</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-file-alt"></i> FilewAle</h3>
+                    <p>Your trusted file sharing platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#upload">Upload</a></li>
+                        <li><a href="#files">Files</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FilewAle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Share File</h3>
+            <div class="share-options">
+                <input type="text" id="shareLink" readonly>
+                <button class="btn btn-primary" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/js/script.js"></script>
+</body>
+</html>
