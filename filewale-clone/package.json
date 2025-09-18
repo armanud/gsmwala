@@ -1,0 +1,31 @@
+{
+  "name": "filewale-clone",
+  "version": "1.0.0",
+  "description": "A modern file sharing platform - FilewAle clone",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "file-sharing",
+    "upload",
+    "download",
+    "web-app",
+    "express"
+  ],
+  "author": "FilewAle Clone",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
