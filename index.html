@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSMarman - Premium File Sharing Platform</title>
+    <meta name="description" content="GSMarman - Upload, share, and download files securely with our premium file sharing platform">
+    <meta name="keywords" content="file sharing, upload, download, cloud storage, GSMarman">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>GSMarman</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categories" class="nav-link">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Share Files <span class="gradient-text">Securely</span> & <span class="gradient-text">Instantly</span>
+                    </h1>
+                    <p class="hero-description">
+                        GSMarman is your premium file sharing platform. Upload, organize, and share your files with advanced security and lightning-fast speeds.
+                    </p>
+                    
+                    <!-- File Upload Area -->
+                    <div class="upload-section">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3>Drop files here or click to upload</h3>
+                            <p>Supports all file types up to 500MB per file</p>
+                            <input type="file" id="fileInput" multiple hidden>
+                            <button class="btn btn-primary" id="selectFilesBtn">
+                                <i class="fas fa-plus"></i> Select Files
+                            </button>
+                        </div>
+                        
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p class="progress-text" id="progressText">Uploading... 0%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-image"></i>
+                        <span>Images</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-video"></i>
+                        <span>Videos</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-music"></i>
+                        <span>Audio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose GSMarman?</h2>
+                    <p>Experience the next generation of file sharing with our advanced features</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Storage</h3>
+                        <p>End-to-end encryption ensures your files are always protected and secure.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Advanced CDN technology delivers your files at maximum speed worldwide.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Easy Sharing</h3>
+                        <p>Share files instantly with customizable links and access controls.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Ready</h3>
+                        <p>Access your files from any device with our responsive design.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics</h3>
+                        <p>Track downloads, views, and engagement with detailed analytics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Version Control</h3>
+                        <p>Keep track of file versions and restore previous versions easily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>File Categories</h2>
+                    <p>Organize and browse files by category</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card" data-category="documents">
+                        <div class="category-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Documents</h3>
+                        <p>PDF, DOC, PPT, XLS</p>
+                        <div class="category-count">1,234 files</div>
+                    </div>
+                    
+                    <div class="category-card" data-category="images">
+                        <div class="category-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>Images</h3>
+                        <p>JPG, PNG, GIF, SVG</p>
+                        <div class="category-count">2,567 files</div>
+                    </div>
+                    
+                    <div class="category-card" data-category="videos">
+                        <div class="category-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Videos</h3>
+                        <p>MP4, AVI, MOV, MKV</p>
+                        <div class="category-count">891 files</div>
+                    </div>
+                    
+                    <div class="category-card" data-category="audio">
+                        <div class="category-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Audio</h3>
+                        <p>MP3, WAV, FLAC, AAC</p>
+                        <div class="category-count">1,456 files</div>
+                    </div>
+                    
+                    <div class="category-card" data-category="software">
+                        <div class="category-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Software</h3>
+                        <p>EXE, DMG, DEB, APK</p>
+                        <div class="category-count">345 files</div>
+                    </div>
+                    
+                    <div class="category-card" data-category="archives">
+                        <div class="category-icon">
+                            <i class="fas fa-file-archive"></i>
+                        </div>
+                        <h3>Archives</h3>
+                        <p>ZIP, RAR, 7Z, TAR</p>
+                        <div class="category-count">678 files</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Files Section -->
+        <section class="recent-files">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recent Files</h2>
+                    <p>Latest uploads from our community</p>
+                </div>
+                
+                <div class="files-grid" id="recentFiles">
+                    <!-- Files will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>GSMarman</span>
+                    </div>
+                    <p>Your premium file sharing platform with advanced security and lightning-fast speeds.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">File Upload</a></li>
+                        <li><a href="#">Secure Sharing</a></li>
+                        <li><a href="#">Cloud Storage</a></li>
+                        <li><a href="#">Mobile Access</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Status Page</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GSMarman. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to GSMarman</h2>
+                <span class="close" data-modal="loginModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+                <p class="modal-footer-text">
+                    Don't have an account? <a href="#" id="showSignup">Sign up here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Join GSMarman</h2>
+                <span class="close" data-modal="signupModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+                <p class="modal-footer-text">
+                    Already have an account? <a href="#" id="showLogin">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
